@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
+  const date = new Date();
+  const hour = date.getHours() % 24;
+  let timeOfDay
+
+  if(hour < 12) {
+    timeOfDay = "morning"
+  } else if (hour >= 12 && hour < 17){
+    timeOfDay = 'afternoon'
+  } else timeOfDay = 'night'
+
+  const colors = ['red', 'green', 'yellow', 'blue', 'white', 'black', 'pink', 'purple', 'orange']
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div className='App' >
+    <h2>Good {timeOfDay}! </h2>
+    <b>{colors}</b>
+  </div>
   );
 }
 
